@@ -9,9 +9,9 @@ puts "RUNNING FLOORPLAN.TCL"
 set_db floorplan_snap_block_grid inst
 
 # Create the core area of the floorplan with dimensions based on site sizes
-# Assuming we have approximately a 100x100 um box as the placeholder floorplan 
+# Assuming we have approximately a 100x100 um box as the placeholder floorplan
 # The floorplan width is calculated as sitesx * 220 and height as sitesy * 25
-create_floorplan -core_size [expr {$sitesx*220}] [expr {$sitesy*25}] 0 0 0 0
+create_floorplan -core_size [expr {$sitesx*144}] [expr {$sitesy*16}] 0 0 0 0
 
 # Initialize core rows for placement within the floorplan
 init_core_rows
@@ -44,13 +44,13 @@ snap_floorplan -all
 if {0} {
   # Perform detailed macro placement
   place_macro_detail
-  
+
   # Disable global placement of IO pins during optimization
   set_db place_global_place_io_pins false
-  
+
   # Set a seed for global placement optimization
   set_db place_opt_run_global_place seed
-  
+
   # Run placement optimization on the design
   place_opt_design
 }

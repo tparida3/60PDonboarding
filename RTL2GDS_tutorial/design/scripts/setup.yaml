@@ -74,8 +74,8 @@ timing_conditions:
 #       temperature: <temperature for the rc corner>
 #       qrc_tech_file: <path to extraction technology file associated with the rc_corner >
 rc_corners:
-  Nominal_25C: 
-#    cap_table: ../SiliconJackets/cadence_sky130/rtk-typical.captable 
+  Nominal_25C:
+#    cap_table: ../SiliconJackets/cadence_sky130/rtk-typical.captable
     temperature: 25
     qrc_tech_file: '[get_flow_config pdk_dir]/quantus/extraction/typical/qrcTechFile'
 
@@ -98,7 +98,7 @@ delay_corners:
     timing_condition:
       early: tt_v1.8_25C
       late: tt_v1.8_25C
-      
+
   ff_v1.98_0C_Nominal_25:
     rc_corner:
       early: Nominal_25C
@@ -155,14 +155,14 @@ analysis_views:
     is_hold: true
     is_dynamic: false
     is_leakage: false
-    
+
   ss_v1.62_125C_Nominal_25_func:
     constraint_mode: func
     delay_corner: ss_v1.62_125C_Nominal_25
     is_setup: true
     is_hold: true
     is_dynamic: false
-    is_leakage: false    
+    is_leakage: false
 
 ####################################################################################################
 # Tool Config
@@ -201,8 +201,8 @@ init_ground_nets:
 #     cpf: < power intent file in CPF format >
 #     1801: < power intent file in 1801 format >
 init_power_intent_files:
-  cpf: 
-  1801: 
+  cpf:
+  1801:
 
 # A YAML list of def files read in during 'init_floorplan' flow_step.  This can include both
 # floorplan and DFT related files.
@@ -210,15 +210,15 @@ init_def_files:
 #  - < PLACEHOLDER: LIST OF DEF FILES FOR READ_DEF >
 
 # Path to floorplan file read in during 'init_floorplan' flow_step.
-init_floorplan_file: 
+init_floorplan_file:
 
-init_floorplan_tcl: 
+init_floorplan_tcl:
   - ./scripts/floorplan.tcl
 
 # 'design' related attributes
 #---------------------------------------------------------------------------------------------------
 # The name of the toplevel module.
-design_name: spm
+design_name: gcd
 
 # The process technology node size.  Valid value is an integer.
 design_process_node: 130
@@ -246,10 +246,10 @@ add_tieoffs_cells:
   - TIELO
 
 # The max distance between a tie-cell and the attached  loads should be less than given value.
-add_tieoffs_max_distance: 
+add_tieoffs_max_distance:
 
 # The max number of tie-pins a tie-net can drive. A '0' means no-limit.
-add_tieoffs_max_fanout: 
+add_tieoffs_max_fanout:
 
 # A YAML list of filler cell base_cell names.
 add_fillers_cells:
@@ -270,15 +270,15 @@ opt_leakage_to_dynamic_ratio: 0.5
 lp_insert_clock_gating: true
 
 # The minimum number of attached loads should be greater than given value.
-lp_clock_gating_min_flops: 
+lp_clock_gating_min_flops:
 #< PLACEHOLDER: MIN FANOUT FOR CLOCK GATE >
 
 # The maximum number of attached loads should be less than given value.
-lp_clock_gating_max_flops: 
+lp_clock_gating_max_flops:
 #< PLACEHOLDER: MAX FANOUT FOR CLOCK GATE >
 
 # Controls automatic timing adjustment on clock-gate enable paths { none fixed variable }
-lp_clock_gating_auto_path_adjust: 
+lp_clock_gating_auto_path_adjust:
 #variable
 
 # 'cts' related attributes
@@ -325,7 +325,7 @@ cts_target_skew: auto
 cts_target_max_transition_time:
   top: 100
   trunk: 100
-  leaf: 100  
+  leaf: 100
 
 # 'route' related attributes
 #---------------------------------------------------------------------------------------------------
